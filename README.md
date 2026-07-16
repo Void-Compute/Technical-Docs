@@ -6,7 +6,7 @@ The entire documentation and history of making Omniverse Apps work on AMD.
 
 This repository is organized into the following directories:
 
-- **`Implementation Plans/`** —
+- **`Implementation Plans/`** — The entire documented history of the implemention plans and changes made to ghost
 - **`architecture/`** — Technical architecture and design documents
 - **`reverse-engineering/`** — Reverse engineering analysis and findings
 - **`compatibility/`** — Compatibility information and requirements
