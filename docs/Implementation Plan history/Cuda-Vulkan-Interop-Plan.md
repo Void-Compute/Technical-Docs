@@ -150,8 +150,6 @@ Add safety measures to prevent DCC/tiling corruption:
 > [!WARNING]
 > **HIP external semaphore stability on Windows:** AMD's documentation marks external semaphores as "not supported on Linux" but is ambiguous about Windows. If `hipImportExternalSemaphore` fails at runtime on Windows, the fallback is already planned: use `hipStreamSynchronize` / `vkQueueWaitIdle` as a brute-force synchronization alternative (trading performance for correctness). The `ghost_cuda_interop.cpp` implementation will detect the failure and automatically activate the brute-force path.
 
-
-
 ### Manual Verification
 1. Monitor for `"Failed to import external memory in CUDA"` in Omniverse logs
 2. If rendering starts, check for visual corruption (checkerboard = DCC issue, scrambled = tiling issue)
