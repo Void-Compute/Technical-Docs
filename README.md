@@ -6,7 +6,7 @@ The entire documentation and history of making Omniverse Apps work on AMD.
 
 This repository is organized into the following directories:
 
-- **`Implementation Plans/`**
+- **`Implementation Plans/`** —
 - **`architecture/`** — Technical architecture and design documents
 - **`reverse-engineering/`** — Reverse engineering analysis and findings
 - **`compatibility/`** — Compatibility information and requirements
