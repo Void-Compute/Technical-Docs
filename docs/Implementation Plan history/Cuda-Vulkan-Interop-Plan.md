@@ -150,15 +150,7 @@ Add safety measures to prevent DCC/tiling corruption:
 > [!WARNING]
 > **HIP external semaphore stability on Windows:** AMD's documentation marks external semaphores as "not supported on Linux" but is ambiguous about Windows. If `hipImportExternalSemaphore` fails at runtime on Windows, the fallback is already planned: use `hipStreamSynchronize` / `vkQueueWaitIdle` as a brute-force synchronization alternative (trading performance for correctness). The `ghost_cuda_interop.cpp` implementation will detect the failure and automatically activate the brute-force path.
 
-## Verification Plan
 
-### Automated Tests
-1. `cargo build --release` — verify compilation
-2. Launch Isaac Sim with `GHOST_TRACE=1` — capture full trace log
-3. Check `ghost_trace.log` for:
-   - `cuImportExternalMemory` calls (should show NV→HIP translation)
-   - `hipImportExternalMemory` return codes
-   - Any `ACCESS_VIOLATION` crashes in the interop path
 
 ### Manual Verification
 1. Monitor for `"Failed to import external memory in CUDA"` in Omniverse logs
