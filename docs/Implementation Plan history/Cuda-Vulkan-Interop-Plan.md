@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-When Omniverse renders a frame in Vulkan, it shares that render buffer with CUDA for physics/compute via `cuImportExternalMemory`. The data flow is:
+When Omniverse renders a frame in Vulkan, it shares that render buffer with CUDA for physics/compute via `cuImportExternalMemory`. The data flow we aim to achieve is:
 
 ```
 Vulkan (AMD driver) → vkGetMemoryWin32HandleKHR → Win32 HANDLE → cuImportExternalMemory (ZLUDA) → hipImportExternalMemory (HIP) → AMD compute
